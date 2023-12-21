@@ -24,6 +24,9 @@ app.get("/contact",(req, res)=>{
 
 })
 
+app.post("/blogs", (req,res)=>{
+    res.render("blogs.ejs",{user: req.body["user"], post: req.body["inputText"]});
+})
 app.listen(port, ()=>{
     console.log(`Listening on port ${port}.`);
 })
