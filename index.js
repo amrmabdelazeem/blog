@@ -11,7 +11,17 @@ app.get("/", (req, res)=>{
     res.render("index.ejs");
 })
 
+app.get("/blogs",(req,res)=>{
 
+})
+
+app.get("/about", (req,res)=>{
+
+})
+
+app.get("/contact",(req, res)=>{
+    
+})
 
 app.listen(port, ()=>{
     console.log(`Listening on port ${port}.`);
