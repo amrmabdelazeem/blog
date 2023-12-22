@@ -11,11 +11,12 @@
 
 <div>
   <form action="/blogs" method="get">
-    <% if(locals.arr){%> <% arr.map((item, index)=>{%>
-    <p><%=item%></p>
-    <input type="submit" value="edit" name="edit">
+    <% if(locals.arr && locals.arr.length>0){%> <% arr.map((item, index)=>{%>
+    <p name="hey"><%=item%></p>
+    <input type="submit" name="edit" value="Edit">
+    <input type="submit" formaction="/delete" value="Delete">
     <%})}else{%>
-    <p>No posts yet!</p>
+    <p>Add new posts 📫</p>
     <%} %>
   </form>
 </div>

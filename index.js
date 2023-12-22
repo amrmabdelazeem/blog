@@ -17,17 +17,27 @@ app.get("/", (req, res)=>{
 app.post("/",(req, res)=>{
     let user = req.body["user"];
     let text = req.body["text"];
-    console.log("This is text edit: "+textEdit);
-    data.push(text);
+    if(text !== undefined){
+        data.push(text);
+    }
+    console.log("old text: "+text);
     console.log(data);
+    let lastItem = data.length;
+    let textEdit = req.body["textEdit"];
+    if(textEdit !== undefined){
+        console.log("this textedit: "+textEdit);
+        data[lastItem-1] = textEdit;
+        console.log("after edit:"+data);
+    }
     res.render("index.ejs", {arr:data});
+    
+
 })
 
 app.get("/blogs",(req,res)=>{
-    let lastItem = data.length -1;
-    console.log("last item number: "+lastItem);
-    console.log("last item: "+data[lastItem]);
-    res.render("blogs.ejs",{lastBlog: data[lastItem]})
+    let lastItem = data.length;
+    console.log("last item: "+data[lastItem-1]);
+    res.render("blogs.ejs",{lastBlog: data[lastItem-1]})
 })
 
 app.get("/about", (req,res)=>{
@@ -38,8 +48,9 @@ app.get("/contact",(req, res)=>{
 
 })
 
-app.post("/blogs", (req,res)=>{
-
+app.get("/delete", (req,res)=>{
+    data.pop();
+    res.redirect("/");
 })
 app.listen(port, ()=>{
     console.log(`Listening on port ${port}.`);
