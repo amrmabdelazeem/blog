@@ -1,7 +1,10 @@
 <%- include("partials/header.ejs") %>
-<a href="/">Home</a>
+<!-- <a href="/">Home</a> -->
 <h1>Blog Posts</h1>
-
+<form action="/" method="post">
+    <textarea cols="40" rows="5" name="textEdit"><%=lastBlog%></textarea>
+    <button type="submit">Done</button>
+</form>
 
 
 <%- include("partials/footer.ejs") %>

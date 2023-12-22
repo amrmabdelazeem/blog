@@ -1,18 +1,23 @@
 <%- include("partials/header.ejs") %>
 
-
 <form action="/" method="post">
-    <textarea type="text" placeholder="What's on your mind?" name="text"></textarea>
-    <input type="submit" value="Post">
+  <textarea
+    type="text"
+    placeholder="What's on your mind?"
+    name="text"
+  ></textarea>
+  <input type="submit" value="Post" />
 </form>
 
 <div>
-    <% if(locals.arr){%>
-        <% arr.map((item)=>{%>
-            <p><%=item%></p>
-        <%})}else{%>
-            <p>No posts yet!</p>
-        <%} %>
+  <form action="/blogs" method="get">
+    <% if(locals.arr){%> <% arr.map((item, index)=>{%>
+    <p><%=item%></p>
+    <input type="submit" value="edit" name="edit">
+    <%})}else{%>
+    <p>No posts yet!</p>
+    <%} %>
+  </form>
 </div>
 
 <%- include("partials/footer.ejs") %>
