@@ -1,11 +1,13 @@
 <%- include("partials/header.ejs") %>
 <!-- <a href="/">Home</a> -->
-<h1>Blog Post</h1>
+
+<h1 class="text-danger-emphasis m-3">Blog Post</h1>
+<div class="mx-3">
 <form action="/" method="post">
-    <textarea cols="40" rows="5" name="textEdit"><%=locals.dataToEdit%></textarea>
+    <textarea class="post-text d-block my-2" name="textEdit"><%=locals.dataToEdit%></textarea>
     <input type="hidden" name="id" value=<%=locals.id%>>
     <button type="submit">Done</button>
 </form>
-
+</div>
 
 <%- include("partials/footer.ejs") %>

@@ -7,6 +7,10 @@
 .nav .bi{
     width: 40px;
     height: 40px;
+    color: #33186B;
+}
+.nav h1{
+    color: #11235A;
 }
 .links .bi{
     width: 30px;
@@ -21,4 +25,5 @@ a{
 .links{
     display: flex;
     gap: 2rem;
+    margin-right: 2rem;
 }

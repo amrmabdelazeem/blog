@@ -1,9 +1,7 @@
 body{
     margin: 0;
     background-color: #EAD196;
-    animation: fadeInAnimation ease 2s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+    font-family: 'Rubik', sans-serif;
 }
 .post-section{
     margin-top: 2rem;
@@ -13,9 +11,9 @@ body{
     display: flex;
     flex-direction: column;
     gap: .5rem;
-}
-.post-text::placeholder{
-
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count:1;
+    animation-fill-mode: forwards;
 }
 .post-text{
     width: 50%;
@@ -23,16 +21,40 @@ body{
     background-color: #F3EDC8;
     border: 1px solid gray;
     text-indent: 1rem;
+    padding-top: 1rem;
     border-radius: 5px;
     resize: none;
+    color: #7D0A0A;
 }
 .post-text:focus{
     outline: 1px solid #7D0A0A;
 }
+.post-text:focus::placeholder{
+    color: transparent;
+}
 .post-btn{
-    padding: .5rem 1rem;
+    padding: .2rem 1rem;
     align-self: center;
     color: #7D0A0A;
+}
+.posts{
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.posts p{
+    color: #BF3131;
+}
+button{
+    padding: .2rem 1rem;
+    border: 1px solid gray;
+    border-radius: 5px;
+    color: #7D0A0A;
+}
+.default-text{
+    color: #BF3131;
+
+
 }
 
 @keyframes fadeInAnimation{
