@@ -45,6 +45,11 @@ body{
 
 .posts p{
     color: #BF3131;
+    background-color: #F3EDC8;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-bottom: .5rem;
+    max-width: 80%;
 }
 button{
     padding: .2rem 1rem;
