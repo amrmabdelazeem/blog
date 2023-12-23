@@ -9,7 +9,7 @@ written in Node.js and a frontend powered by EJS templates.
 To get started with the project, follow these steps:
 
 ## Prerequisites
-* Make sure you have Node.js installed on your machine. If not, you can download it from [nodejs.org](nodejs.org).
+* Make sure you have Node.js installed on your machine. If not, you can download it from [nodejs.org](https://nodejs.org/en).
 
 ## Installation
 1.Clone the repository:
