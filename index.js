@@ -23,7 +23,6 @@ app.post("/",(req, res)=>{
     if(text !== undefined){
         data.push(text);
     }
-    console.log(data);
     let textEdit = req.body["textEdit"];
     if(textEdit !== undefined){
         data[id] = textEdit;
@@ -62,18 +61,3 @@ app.post("/delete", (req,res)=>{
 app.listen(port, ()=>{
     console.log(`Listening on port ${port}.`);
 })
-
-
-// Implement the post creation feature. This includes creating the form on the home page and handling the form submission in the server.
-
-// Implement the post viewing feature. This includes displaying all the posts on the home page.
-
-// Implement the post edit feature. This includes using a form to load the existing blog post and allowing the user to edit and save the post.
-
-// Implement the delete feature. This allows the user to click a button and remove the post from the home page.
-
-// Implement the alternative list to show a different set of todo tasks.
-
-// Test the application to ensure that post creation and viewing are working correctly.
-
-
