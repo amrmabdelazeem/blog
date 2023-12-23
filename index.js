@@ -1,5 +1,5 @@
 import express from "express";
-import ejs from "ejs";
+import ejs, { name } from "ejs";
 import bodyParser from "body-parser";
 
 const app = express();
@@ -9,6 +9,7 @@ const data = [];
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("public"));
+app.use(express.json());
 
 app.get("/", (req, res)=>{
     res.render("index.ejs", {arr:data});
@@ -17,27 +18,32 @@ app.get("/", (req, res)=>{
 app.post("/",(req, res)=>{
     let user = req.body["user"];
     let text = req.body["text"];
+    // console.log(req.body);
     if(text !== undefined){
         data.push(text);
     }
-    console.log("old text: "+text);
-    console.log(data);
+    // console.log("old text: "+text);
+    // console.log(data);
     let lastItem = data.length;
     let textEdit = req.body["textEdit"];
     if(textEdit !== undefined){
-        console.log("this textedit: "+textEdit);
+        // console.log("this textedit: "+textEdit);
         data[lastItem-1] = textEdit;
-        console.log("after edit:"+data);
+        // console.log("after edit:"+data);
     }
     res.render("index.ejs", {arr:data});
-    
 
 })
 
-app.get("/blogs",(req,res)=>{
-    let lastItem = data.length;
-    console.log("last item: "+data[lastItem-1]);
-    res.render("blogs.ejs",{lastBlog: data[lastItem-1]})
+
+app.post("/blog",(req,res)=>{
+    let currentPost = req.body["textEdit"];
+    let index = req.body["id"];
+    let dataEdit = data[Number(index)];
+    res.render("blogs.ejs",{lastBlog: dataEdit})
+})
+app.get("/blog",(req,res)=>{
+    res.render("blogs.ejs")
 })
 
 app.get("/about", (req,res)=>{
@@ -48,8 +54,11 @@ app.get("/contact",(req, res)=>{
 
 })
 
-app.get("/delete", (req,res)=>{
-    data.pop();
+app.post("/delete", (req,res)=>{
+    let currentPost = req.body["textEdit"];
+    console.log("Current post: "+currentPost)
+    const index = data.indexOf(currentPost);
+    data.splice(index);
     res.redirect("/");
 })
 app.listen(port, ()=>{

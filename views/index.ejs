@@ -6,15 +6,16 @@
     placeholder="What's on your mind?"
     name="text"
   ></textarea>
-  <input type="submit" value="Post" />
+  <input type="submit" value="Post"/>
 </form>
 
 <div>
-  <form action="/blogs" method="get">
+  <form action="/blog" method="post">
     <% if(locals.arr && locals.arr.length>0){%> <% arr.map((item, index)=>{%>
-    <p name="hey"><%=item%></p>
-    <input type="submit" name="edit" value="Edit">
-    <input type="submit" formaction="/delete" value="Delete">
+      <!-- <textarea name="index" hidden><%=index%></textarea> -->
+    <p id="item"><%=item%></p>
+    <button type="submit" name="id" value=<%=index%>>Edit</button>
+    <input type="submit" value="Delete" name="delete">
     <%})}else{%>
     <p>Add new posts 📫</p>
     <%} %>
