@@ -1,0 +1,24 @@
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F6ECA9;
+}
+.nav .bi{
+    width: 40px;
+    height: 40px;
+}
+.links .bi{
+    width: 30px;
+    height: 30px;
+    color: #11235A;
+    margin-right: .2rem;
+}
+a{
+    color: #11235A;
+    text-decoration: none;
+}
+.links{
+    display: flex;
+    gap: 2rem;
+}
