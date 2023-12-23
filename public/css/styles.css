@@ -1,22 +1,45 @@
 body{
     margin: 0;
-
-
+    background-color: #EAD196;
+    animation: fadeInAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 .post-section{
-    background-color: #D2E0FB;
+    margin-top: 2rem;
+    background-color: #EAD196;
 }
 .post-form{
     display: flex;
     flex-direction: column;
+    gap: .5rem;
+}
+.post-text::placeholder{
+
 }
 .post-text{
     width: 50%;
     align-self: center;
-    background-color: #D2E0FB;
-
+    background-color: #F3EDC8;
+    border: 1px solid gray;
+    text-indent: 1rem;
+    border-radius: 5px;
+    resize: none;
+}
+.post-text:focus{
+    outline: 1px solid #7D0A0A;
 }
 .post-btn{
-    width: 70px;
+    padding: .5rem 1rem;
     align-self: center;
+    color: #7D0A0A;
+}
+
+@keyframes fadeInAnimation{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
