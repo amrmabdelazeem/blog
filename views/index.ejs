@@ -1,14 +1,15 @@
 <%- include("partials/header.ejs") %>
-
-<form action="/" method="post">
+<div class="post-section">
+<form class="post-form" action="/" method="post">
   <textarea
+  class="post-text"
     type="text"
     placeholder="What's on your mind?"
     name="text"
   ></textarea>
-  <input type="submit" value="Post"/>
+  <input class="post-btn" type="submit" value="Post"/>
 </form>
-
+</div>
 <div>
   <form action="/blog" method="post">
     <% if(locals.arr && locals.arr.length>0){%> <% arr.map((item, index)=>{%>
