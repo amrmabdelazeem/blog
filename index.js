@@ -43,12 +43,13 @@ app.get("/blog",(req,res)=>{
     res.render("blogs.ejs")
 })
 
-app.get("/about", (req,res)=>{
-
-})
 
 app.get("/contact",(req, res)=>{
+    res.render("contact");
+})
 
+app.get("/about", (req,res)=>{
+    res.render("about.ejs");
 })
 
 app.post("/delete", (req,res)=>{
