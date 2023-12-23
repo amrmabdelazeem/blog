@@ -5,8 +5,8 @@
     background-color: #F6ECA9;
 }
 .nav .bi{
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     color: #33186B;
 }
 .nav .bi:hover{
@@ -30,7 +30,15 @@ a{
 .links{
     display: flex;
     gap: 2rem;
-    margin-right: 2rem;
+
+}
+@media (max-width:380px){
+  .nav{
+    gap: 1rem;
+  }
+  .links{
+    margin-right: 0;
+  }
 }
 @keyframes shake {
     10%, 90% {
