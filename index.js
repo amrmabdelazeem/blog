@@ -18,18 +18,15 @@ app.get("/", (req, res)=>{
 app.post("/",(req, res)=>{
     let user = req.body["user"];
     let text = req.body["text"];
-    // console.log(req.body);
+    let id =req.body["id"];
+
     if(text !== undefined){
         data.push(text);
     }
-    // console.log("old text: "+text);
-    // console.log(data);
-    let lastItem = data.length;
+    console.log(data);
     let textEdit = req.body["textEdit"];
     if(textEdit !== undefined){
-        // console.log("this textedit: "+textEdit);
-        data[lastItem-1] = textEdit;
-        // console.log("after edit:"+data);
+        data[id] = textEdit;
     }
     res.render("index.ejs", {arr:data});
 
@@ -40,7 +37,7 @@ app.post("/blog",(req,res)=>{
     let currentPost = req.body["textEdit"];
     let index = req.body["id"];
     let dataEdit = data[Number(index)];
-    res.render("blogs.ejs",{lastBlog: dataEdit})
+    res.render("blogs.ejs",{dataToEdit: dataEdit, id: index})
 })
 app.get("/blog",(req,res)=>{
     res.render("blogs.ejs")
@@ -56,7 +53,7 @@ app.get("/contact",(req, res)=>{
 
 app.post("/delete", (req,res)=>{
     let currentPost = req.body["textEdit"];
-    console.log("Current post: "+currentPost)
+    
     const index = data.indexOf(currentPost);
     data.splice(index);
     res.redirect("/");

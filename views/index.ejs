@@ -15,8 +15,7 @@
       <!-- <textarea name="index" hidden><%=index%></textarea> -->
     <p id="item"><%=item%></p>
     <button type="submit" name="id" value=<%=index%>>Edit</button>
-    <input type="submit" value="Delete" name="delete">
-    <%})}else{%>
+    <input type="submit" formaction="/delete" value="Delete" name="delete">    <%})}else{%>
     <p>Add new posts 📫</p>
     <%} %>
   </form>
